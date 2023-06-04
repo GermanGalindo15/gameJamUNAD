@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum GameCardType
 {
-
+    fuego,
+    hielo,
+    radiacion,
+    acido,
+    normal
 }
 
 [CreateAssetMenu(fileName = "New Game Card", menuName = "Scriptable Objects/ Game Card")]
 public class GameCardSO : ScriptableObject
 {
     [Header("Information")]
-    public string title;
-    [Range(0, 12)] public int level;
-    public GameCardType[] types;
-    [TextArea] public string description;
+    public string Nombre;
+
+    public GameCardType[] tipo;
+    [TextArea] public string descripcion;
 
     [Header("Card")]
     public Texture texture;
@@ -21,6 +25,9 @@ public class GameCardSO : ScriptableObject
     public bool isHolographic;
 
     [Header("Stats")]
-    public int statAttack;
-    public int statDefence;
+    public int diametro;
+    public int edad;
+    public int presion;
+    public int temperatura;
+    public int gravedad;
 }

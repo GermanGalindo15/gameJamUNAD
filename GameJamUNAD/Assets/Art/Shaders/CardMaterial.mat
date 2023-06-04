@@ -46,8 +46,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Metalic: 1
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Smothness: 0.5
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &6055643405689828600
