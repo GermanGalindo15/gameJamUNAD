@@ -1,106 +1,130 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class QTEController : MonoBehaviour
 {
-    private bool touchDetected = false;
-    private bool eventCompleted = false;
-    private float waitTime;
-    private float currentTime;
+    public RawImage rightImage;
+    public RawImage leftImage;
+    public Button leftButton;
+    public Button rightButton;
 
-    [Range(3f, 8f)]
-    public float minWaitTime = 2f; // Valor mínimo del tiempo de espera aleatorio
-    [Range(3f, 8f)]
-    public float maxWaitTime = 5f; // Valor máximo del tiempo de espera aleatorio
+    public float tiempoDeEspera = 5f;
 
-    public float delayBeforeSceneChange = 3f; // Tiempo de espera antes de cambiar a otra escena
-    public TextMeshProUGUI messageText; // Objeto de texto para mostrar el mensaje
-    public TextMeshProUGUI penaltyText; // Objeto de texto para mostrar la penalización
+    [Range (2f, 8f)]
+    public float minInterval = 2f;
 
-    void Start()
+    [Range (2f, 8f)]
+    public float maxInterval = 5f;
+
+    private bool canTap = false;
+    private bool eventStarted = false;
+
+    private float nextInterval;
+
+    private void Start()
     {
-        // Establecer tiempo de espera aleatorio entre minWaitTime y maxWaitTime
-        waitTime = Random.Range(minWaitTime, maxWaitTime);
+        nextInterval = GetRandomInterval();
+        Invoke("AllowTap", nextInterval);
     }
 
-    void Update()
+    private void Update()
     {
-        if (!eventCompleted)
+        if (canTap)
         {
-            if (currentTime < waitTime)
-            {
-                currentTime += Time.deltaTime;
-            }
-            else if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
+            leftButton.onClick.AddListener(OnLeftButtonClick);
+            rightButton.onClick.AddListener(OnRightButtonClick);
+        }
+    }
 
-                if (touch.phase == TouchPhase.Began)
-                {
-                    touchDetected = true;
-                    eventCompleted = true;
-                    ShowMessage("¡Toca la pantalla!");
-                }
-            }
+    private void OnLeftButtonClick()
+    {
+        if (!eventStarted)
+        {
+            StartEvent(true);
         }
         else
         {
-            // Esperar unos segundos antes de cambiar a otra escena
-            delayBeforeSceneChange -= Time.deltaTime;
-            if (delayBeforeSceneChange <= 0f)
-            {
-                // Cambiar a otra escena
-                SceneManager.LoadScene("Juego");
-            }
+            EndEvent(true);
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnRightButtonClick()
     {
-        if (touchDetected)
+        if (!eventStarted)
         {
-            float screenHalfWidth = Screen.width / 2f;
-
-            if (collision.GetContact(0).point.x < screenHalfWidth)
-            {
-                Debug.Log("Tocó la mitad izquierda de la pantalla.");
-                ShowPenalty("¡Penalización!");
-                // Realiza las acciones correspondientes para la penalización del lado izquierdo.
-            }
-            else
-            {
-                Debug.Log("Tocó la mitad derecha de la pantalla.");
-                ShowPenalty("¡Penalización!");
-                // Realiza las acciones correspondientes para la penalización del lado derecho.
-            }
-
-            touchDetected = false;
-            eventCompleted = true;
+            StartEvent(false);
+        }
+        else
+        {
+            EndEvent(false);
         }
     }
 
-    void ShowMessage(string text)
+    private void StartEvent(bool isLeft)
     {
-        if (messageText != null)
+        if (isLeft)
         {
-            messageText.gameObject.SetActive(true);
-            messageText.text = text;
+            leftImage.gameObject.SetActive(true);
+            // Aquí puedes asignar la imagen correspondiente al lado izquierdo usando penaltyImage.sprite = spriteLadoIzquierdo;
         }
+        else
+        {
+            rightImage.gameObject.SetActive(true);
+            // Aquí puedes asignar la imagen correspondiente al lado derecho usando startImage.sprite = spriteLadoDerecho;
+        }
+
+        eventStarted = true;
     }
 
-    void ShowPenalty(string text)
+    private void EndEvent(bool isLeft)
     {
-        if (penaltyText != null)
+        if (isLeft)
         {
-            penaltyText.gameObject.SetActive(true);
-            penaltyText.text = text;
+            // El jugador tocó el lado izquierdo antes de tiempo
+            Debug.Log("Penalización - Lado izquierdo");
         }
+        else
+        {
+            // El jugador tocó el lado derecho antes de tiempo
+            Debug.Log("Penalización - Lado derecho");
+        }
+
+        // Restablecer los valores
+        leftImage.gameObject.SetActive(false);
+        rightImage.gameObject.SetActive(false);
+        canTap = false;
+        eventStarted = false;
+
+        nextInterval = GetRandomInterval();
+        Invoke("AllowTap", nextInterval);
+
+        StartCoroutine(ChangeSceneAfterDelay(tiempoDeEspera));
+
+        // Aquí puedes cambiar a otra escena después de un tiempo usando StartCoroutine(ChangeSceneAfterDelay(tiempoDeEspera));
+    }
+
+    private void AllowTap()
+    {
+        canTap = true;
+    }
+
+    private float GetRandomInterval()
+    {
+        return Random.Range(minInterval, maxInterval);
+    }
+
+    // Coroutine para cambiar a otra escena después de un tiempo
+    private IEnumerator ChangeSceneAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        SceneManager.LoadScene("Juego");
     }
 }
+
 
 
 
