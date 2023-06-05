@@ -10,8 +10,16 @@ public class QTEController : MonoBehaviour
     public RawImage leftImage;
     public Button leftButton;
     public Button rightButton;
+    public RawImage warImage;
+    public RawImage leftHand;
+    public RawImage rightHand;
+   
+    
 
-    public float tiempoDeEspera = 5f;
+    private bool leftButtonPressed = false;
+    private bool rightButtonPressed = false;
+
+    public float delay = 5f;
 
     [Range (2f, 8f)]
     public float minInterval = 2f;
@@ -26,89 +34,154 @@ public class QTEController : MonoBehaviour
 
     private void Start()
     {
+        leftButtonPressed = false;
+        rightButtonPressed = false;
+
         nextInterval = GetRandomInterval();
         Invoke("AllowTap", nextInterval);
+
+        leftButton.onClick.AddListener(OnLeftButtonClick);
+        rightButton.onClick.AddListener(OnRightButtonClick);
+
+        rightImage.gameObject.SetActive(false);
+        leftImage.gameObject.SetActive(false);
+        warImage.gameObject.SetActive(false);
+
+        
     }
 
     private void Update()
     {
         if (canTap)
         {
-            leftButton.onClick.AddListener(OnLeftButtonClick);
-            rightButton.onClick.AddListener(OnRightButtonClick);
+            
+
+            warImage.gameObject.SetActive(true);
+    
+        }
+        
+        if(leftButtonPressed == true)
+        {
+            warImage.gameObject.SetActive(false);
+            Invoke("ChangeScene", delay);
+        }
+        else if(rightButtonPressed == true)
+        {
+            warImage.gameObject.SetActive(false);
+            Invoke("ChangeScene", delay);
         }
     }
 
-    private void OnLeftButtonClick()
+   private void OnLeftButtonClick()
+{
+    if (!eventStarted)
     {
-        if (!eventStarted)
-        {
-            StartEvent(true);
-        }
-        else
+        StartEvent(true);
+        
+    }
+    else
+    {
+        if (!leftButtonPressed)
         {
             EndEvent(true);
         }
     }
 
-    private void OnRightButtonClick()
+    leftButton.interactable = false;
+    leftButtonPressed = true;
+    
+}
+
+private void OnRightButtonClick()
+{
+    if (!eventStarted)
     {
-        if (!eventStarted)
-        {
-            StartEvent(false);
-        }
-        else
+        StartEvent(false);
+    }
+    else
+    {
+        if (!rightButtonPressed)
         {
             EndEvent(false);
         }
     }
 
-    private void StartEvent(bool isLeft)
-    {
-        if (isLeft)
-        {
-            leftImage.gameObject.SetActive(true);
-            // Aquí puedes asignar la imagen correspondiente al lado izquierdo usando penaltyImage.sprite = spriteLadoIzquierdo;
-        }
-        else
-        {
-            rightImage.gameObject.SetActive(true);
-            // Aquí puedes asignar la imagen correspondiente al lado derecho usando startImage.sprite = spriteLadoDerecho;
-        }
+    rightButton.interactable = false;
+    rightButtonPressed = true;
+    
+}
 
-        eventStarted = true;
+
+    private void StartEvent(bool isLeft)
+{
+    eventStarted = true;
+    
+
+    if (isLeft)
+    {
+        leftImage.gameObject.SetActive(true);
+        Vector2 targetPosition = new Vector2(-417f, 90f); // Coordenadas X e Y deseadas
+        leftHand.rectTransform.anchoredPosition = targetPosition;
+        
     }
+    else
+    {
+        rightImage.gameObject.SetActive(true);
+        Vector2 targetPosition = new Vector2(417f, -90f); // Coordenadas X e Y deseadas
+        rightHand.rectTransform.anchoredPosition = targetPosition;
+    }
+
+    leftButton.interactable = true;
+    rightButton.interactable = true;
+
+    
+}
+
 
     private void EndEvent(bool isLeft)
+{
+    leftButton.interactable = false;
+    rightButton.interactable = false;
+
+    if (isLeft)
     {
-        if (isLeft)
-        {
-            // El jugador tocó el lado izquierdo antes de tiempo
-            Debug.Log("Penalización - Lado izquierdo");
-        }
-        else
-        {
-            // El jugador tocó el lado derecho antes de tiempo
-            Debug.Log("Penalización - Lado derecho");
-        }
-
-        // Restablecer los valores
-        leftImage.gameObject.SetActive(false);
-        rightImage.gameObject.SetActive(false);
+        // El jugador tocó el lado izquierdo antes de tiempo
+        rightImage.gameObject.SetActive(true);
+        Vector2 targetPosition = new Vector2(417f, -90f); // Coordenadas X e Y deseadas
+        rightHand.rectTransform.anchoredPosition = targetPosition;
         canTap = false;
-        eventStarted = false;
-
-        nextInterval = GetRandomInterval();
-        Invoke("AllowTap", nextInterval);
-
-        StartCoroutine(ChangeSceneAfterDelay(tiempoDeEspera));
-
-        // Aquí puedes cambiar a otra escena después de un tiempo usando StartCoroutine(ChangeSceneAfterDelay(tiempoDeEspera));
+        
+    }
+    else
+    {
+        // El jugador tocó el lado derecho antes de tiempo
+        leftImage.gameObject.SetActive(true);
+        Vector2 targetPosition = new Vector2(-417f, 90f); // Coordenadas X e Y deseadas
+        leftHand.rectTransform.anchoredPosition = targetPosition;
+        canTap = false;
     }
 
+    // Restablecer los valores
+    warImage.gameObject.SetActive(false);
+    canTap = false;
+    eventStarted = false;
+
+    nextInterval = GetRandomInterval();
+    Invoke("AllowTap", nextInterval);
+
+   
+    
+}
+private void ChangeScene()
+{
+
+SceneManager.LoadScene("Juego");
+
+}
     private void AllowTap()
     {
         canTap = true;
+        
     }
 
     private float GetRandomInterval()
@@ -116,14 +189,10 @@ public class QTEController : MonoBehaviour
         return Random.Range(minInterval, maxInterval);
     }
 
-    // Coroutine para cambiar a otra escena después de un tiempo
-    private IEnumerator ChangeSceneAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        SceneManager.LoadScene("Juego");
-    }
+    
 }
+
+
 
 
 
