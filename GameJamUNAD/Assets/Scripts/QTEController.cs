@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
-public class QuickTimeEventController : MonoBehaviour
+public class QTEController : MonoBehaviour
 {
     private bool touchDetected = false;
     private bool eventCompleted = false;
