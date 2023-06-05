@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Fobos
+  m_EditorClassIdentifier: 
+  Nombre: Fobos
+  Tipo: Luna
+  descripcion: "Fobos es una de las lunas de Marte y tiene una \xF3rbita tan baja
+    que eventualmente se acercar\xE1 lo suficiente para ser destruido por la gravedad
+    marciana."
+  texture: {fileID: 2800000, guid: a08931ded0f084843a2ef46c4e9b9018, type: 3}
+  color: {r: 0.4156863, g: 0.41176474, b: 0.41176474, a: 0}
+  isHolographic: 0
+  diametroKm: 27
+  periodoRotacionHrs: 7,7
+  temperaturaMaxima: -112
+  gravedad: 0,0057

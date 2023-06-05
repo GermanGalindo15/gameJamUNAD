@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Nereida
+  m_EditorClassIdentifier: 
+  Nombre: Nereida
+  Tipo: Luna
+  descripcion: " Es uno de los objetos m\xE1s lejanos de Neptuno y se cree que fue
+    capturado por la gravedad del planeta en lugar de haberse formado all\xED."
+  texture: {fileID: 2800000, guid: e8e330213db33944ab5e020e68dc476b, type: 3}
+  color: {r: 0.7490196, g: 0.72156864, b: 0.7254902, a: 1}
+  isHolographic: 0
+  diametroKm: 340
+  periodoRotacionHrs: 13
+  temperaturaMaxima: -235
+  gravedad: 0,0048

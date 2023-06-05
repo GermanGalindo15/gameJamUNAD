@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Calisto
+  m_EditorClassIdentifier: 
+  Nombre: Calisto
+  Tipo: Luna
+  descripcion: "Es conocida por ser el objeto m\xE1s antiguo y geol\xF3gicamente
+    activo del sistema solar, con una superficie llena de cr\xE1teres y ca\xF1ones."
+  texture: {fileID: 2800000, guid: fcbf9a1782b4d4a40812db19ce91afc2, type: 3}
+  color: {r: 0.69803923, g: 0.6431373, b: 0.5686275, a: 1}
+  isHolographic: 0
+  diametroKm: 4,82
+  periodoRotacionHrs: 400
+  temperaturaMaxima: -153
+  gravedad: 1

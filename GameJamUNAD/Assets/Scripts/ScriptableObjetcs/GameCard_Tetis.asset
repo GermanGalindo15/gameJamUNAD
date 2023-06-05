@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Tetis
+  m_EditorClassIdentifier: 
+  Nombre: Tetis
+  Tipo: Luna
+  descripcion: "Es la luna m\xE1s grande de Urano y tiene una superficie llena de
+    grietas y ca\xF1ones que sugieren que experiment\xF3 una intensa actividad geol\xF3gica
+    en el pasado."
+  texture: {fileID: 2800000, guid: 4f20ec18437cd4341bc4be3f99090330, type: 3}
+  color: {r: 0.92549026, g: 0.9333334, b: 0.9215687, a: 1}
+  isHolographic: 0
+  diametroKm: 1062
+  periodoRotacionHrs: 45
+  temperaturaMaxima: -187
+  gravedad: 0.145

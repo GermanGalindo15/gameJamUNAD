@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Luna
+  m_EditorClassIdentifier: 
+  Nombre: Luna
+  Tipo: Luna
+  descripcion: "La Luna es el \xFAnico sat\xE9lite natural de la Tierra y, curiosamente,
+    siempre muestra la misma cara hacia nuestro planeta debido a su detector gravitacional."
+  texture: {fileID: 2800000, guid: d27ef093157d22d4b820187910d54646, type: 3}
+  color: {r: 0.7960785, g: 0.79215693, b: 0.77647066, a: 0}
+  isHolographic: 0
+  diametroKm: 3474
+  periodoRotacionHrs: 655,7
+  temperaturaMaxima: 123
+  gravedad: 1,622

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Urano
+  m_EditorClassIdentifier: 
+  Nombre: Urano
+  Tipo: Planeta
+  descripcion: "Urano es \xFAnico debido a que su eje de rotaci\xF3n est\xE1 inclinado
+    casi 90 grados, lo que hace que gire pr\xE1cticamente de lado en comparaci\xF3n
+    con otros planetas."
+  texture: {fileID: 2800000, guid: 22605db1c7cff6047902b8f43256096a, type: 3}
+  color: {r: 0.121568635, g: 0.60784316, b: 0.8117648, a: 1}
+  isHolographic: 0
+  diametroKm: 50724
+  periodoRotacionHrs: 17,2
+  temperaturaMaxima: -224
+  gravedad: 8,69

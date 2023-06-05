@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Ceres
+  m_EditorClassIdentifier: 
+  Nombre: Ceres
+  Tipo: Planeta
+  descripcion: "Ceres es el objeto m\xE1s grande en el cintur\xF3n de asteroides
+    entre Marte y J\xFApiter, y se considera un \"planeta enano\"."
+  texture: {fileID: 2800000, guid: e0f2a0a64f60b7f4d93c42709ba4a4b2, type: 3}
+  color: {r: 0.5137255, g: 0.5176471, b: 0.5372549, a: 1}
+  isHolographic: 0
+  diametroKm: 940
+  periodoRotacionHrs: 9
+  temperaturaMaxima: -105
+  gravedad: 0,28

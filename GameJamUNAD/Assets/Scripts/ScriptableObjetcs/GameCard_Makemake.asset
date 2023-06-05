@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
-  m_Name: GameCard-Mercurio
+  m_Name: GameCard_Makemake
   m_EditorClassIdentifier: 
-  Nombre: 
-  tipo: 
-  descripcion: 
-  texture: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  Nombre: Makemake
+  Tipo: Luna
+  descripcion: Makemake.
+  texture: {fileID: 2800000, guid: 9379ff55d4e901b4e80389c6daa92b96, type: 3}
+  color: {r: 0.46274513, g: 0.3137255, b: 0.2784314, a: 1}
   isHolographic: 0
-  diametro: 0
-  edad: 0
-  presion: 0
-  temperatura: 0
-  gravedad: 0
+  diametroKm: 22,5
+  periodoRotacionHrs: 3,9
+  temperaturaMaxima: -239
+  gravedad: 0,5

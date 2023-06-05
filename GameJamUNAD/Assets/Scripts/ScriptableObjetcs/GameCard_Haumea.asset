@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Haumea
+  m_EditorClassIdentifier: 
+  Nombre: Haumena
+  Tipo: Luna
+  descripcion: "Haumea es un planeta enano con una forma inusualmente alargada debido
+    a su r\xE1pida rotaci\xF3n."
+  texture: {fileID: 2800000, guid: b977cd32f4eb0d546b8ef96beec1d248, type: 3}
+  color: {r: 0.7686275, g: 0.7686275, b: 0.77647066, a: 1}
+  isHolographic: 0
+  diametroKm: 1436
+  periodoRotacionHrs: 3.9
+  temperaturaMaxima: -241
+  gravedad: 0.4

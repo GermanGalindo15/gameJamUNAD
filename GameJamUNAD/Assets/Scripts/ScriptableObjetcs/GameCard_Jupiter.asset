@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Jupiter
+  m_EditorClassIdentifier: 
+  Nombre: Jupiter
+  Tipo: Planeta
+  descripcion: "J\xFApiter es el planeta m\xE1s grande de nuestro Sistema Solar y
+    tiene una tormenta gigantesca llamada la Gran Mancha Roja que ha estado activa
+    durante siglos."
+  texture: {fileID: 2800000, guid: 9a0cb8ce9835c144d938a3df7a66dfd5, type: 3}
+  color: {r: 0.8078432, g: 0.6156863, b: 0.41960788, a: 1}
+  isHolographic: 0
+  diametroKm: 139,82
+  periodoRotacionHrs: 9,8
+  temperaturaMaxima: -145
+  gravedad: 24,79

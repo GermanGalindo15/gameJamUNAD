@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Marte
+  m_EditorClassIdentifier: 
+  Nombre: Marte
+  Tipo: Planeta
+  descripcion: "Marte es conocido como el \"planeta rojo\" debido a su color caracter\xEDstico,
+    causado por la presencia de \xF3xido de hierro en su superficie."
+  texture: {fileID: 2800000, guid: e6c01d260fa54974d83a2a965b470ab7, type: 3}
+  color: {r: 1, g: 0.36304918, b: 0.2216981, a: 1}
+  isHolographic: 0
+  diametroKm: 6779
+  periodoRotacionHrs: 24,6
+  temperaturaMaxima: -5
+  gravedad: 3,71

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Pluton
+  m_EditorClassIdentifier: 
+  Nombre: "Plut\xF3n"
+  Tipo: Planeta
+  descripcion: "Plut\xF3n es un \"planeta enano\" y sol\xEDa ser considerado el noveno
+    planeta del Sistema Solar antes de ser reclasificado en 2006."
+  texture: {fileID: 2800000, guid: 84932f54838840148851ce7b3c6cac1a, type: 3}
+  color: {r: 0.7137255, g: 0.6, b: 0.49411768, a: 1}
+  isHolographic: 0
+  diametroKm: 2377
+  periodoRotacionHrs: 153,3
+  temperaturaMaxima: -229
+  gravedad: 0,62

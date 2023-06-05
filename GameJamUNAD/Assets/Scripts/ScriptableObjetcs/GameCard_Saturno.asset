@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Saturno
+  m_EditorClassIdentifier: 
+  Nombre: Saturno
+  Tipo: Planeta
+  descripcion: "Saturno es conocido por sus espectaculares anillos, que est\xE1n
+    compuestos principalmente de part\xEDculas de hielo y roca."
+  texture: {fileID: 2800000, guid: ae28f35d4b3528245b4c2215663b6ce7, type: 3}
+  color: {r: 0.89019614, g: 0.78823537, b: 0.5803922, a: 1}
+  isHolographic: 0
+  diametroKm: 116,46
+  periodoRotacionHrs: 10,7
+  temperaturaMaxima: -178
+  gravedad: 10,44

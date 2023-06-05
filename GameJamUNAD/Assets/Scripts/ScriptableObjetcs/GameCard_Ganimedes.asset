@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Ganimedes
+  m_EditorClassIdentifier: 
+  Nombre: "Gan\xEDmedes"
+  Tipo: Luna
+  descripcion: "Su superficie es compleja y tiene cr\xE1teres, rayas y crestas que
+    sugieren actividad tect\xF3nica pasada."
+  texture: {fileID: 2800000, guid: 247b8bd90a1f9a94f84f73bc44032c62, type: 3}
+  color: {r: 0.68235296, g: 0.6509804, b: 0.58431375, a: 1}
+  isHolographic: 0
+  diametroKm: 5268
+  periodoRotacionHrs: 171
+  temperaturaMaxima: -163
+  gravedad: 1,428

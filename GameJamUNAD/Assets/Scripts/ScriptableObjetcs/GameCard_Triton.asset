@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e03de487b32b83429f32b3657cd1a25, type: 3}
+  m_Name: GameCard_Triton
+  m_EditorClassIdentifier: 
+  Nombre: Triton
+  Tipo: Luna
+  descripcion: "Es un objeto \xFAnico debido a su \xF3rbita retr\xF3grada alrededor
+    de Neptuno y su superficie cubierta de hielo y nitr\xF3geno."
+  texture: {fileID: 2800000, guid: de7656d87189a3a438d59f7e1fab52d2, type: 3}
+  color: {r: 0.7490196, g: 0.72156864, b: 0.7254902, a: 1}
+  isHolographic: 0
+  diametroKm: 2706
+  periodoRotacionHrs: 5
+  temperaturaMaxima: -235
+  gravedad: 0,779
