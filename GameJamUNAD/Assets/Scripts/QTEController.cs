@@ -13,6 +13,7 @@ public class QTEController : MonoBehaviour
     public RawImage warImage;
     public RawImage leftHand;
     public RawImage rightHand;
+    public RawImage instructions;
    
     
 
@@ -21,11 +22,11 @@ public class QTEController : MonoBehaviour
 
     public float delay = 5f;
 
-    [Range (2f, 8f)]
-    public float minInterval = 2f;
+    [Range (5f, 7f)]
+    public float minInterval = 5f;
 
-    [Range (2f, 8f)]
-    public float maxInterval = 5f;
+    [Range (10f, 13f)]
+    public float maxInterval = 12f;
 
     private bool canTap = false;
     private bool eventStarted = false;
@@ -34,14 +35,14 @@ public class QTEController : MonoBehaviour
 
     private void Start()
     {
-        leftButtonPressed = false;
-        rightButtonPressed = false;
+        
 
         nextInterval = GetRandomInterval();
         Invoke("AllowTap", nextInterval);
 
-        leftButton.onClick.AddListener(OnLeftButtonClick);
-        rightButton.onClick.AddListener(OnRightButtonClick);
+        
+
+        instructions.gameObject.SetActive(true);
 
         rightImage.gameObject.SetActive(false);
         leftImage.gameObject.SetActive(false);
@@ -54,20 +55,25 @@ public class QTEController : MonoBehaviour
     {
         if (canTap)
         {
-            
+
+            leftButton.onClick.AddListener(OnLeftButtonClick);
+            rightButton.onClick.AddListener(OnRightButtonClick);
 
             warImage.gameObject.SetActive(true);
+            instructions.gameObject.SetActive(false);
     
         }
         
         if(leftButtonPressed == true)
         {
             warImage.gameObject.SetActive(false);
+            instructions.gameObject.SetActive(false);
             Invoke("ChangeScene", delay);
         }
         else if(rightButtonPressed == true)
         {
             warImage.gameObject.SetActive(false);
+            instructions.gameObject.SetActive(false);
             Invoke("ChangeScene", delay);
         }
     }
